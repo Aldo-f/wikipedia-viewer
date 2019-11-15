@@ -1,5 +1,4 @@
 <!-- Form -->
-
 <form class="form">
 	<div class="input-group mb-3">
 		<input class="form-control col-sm-10" #box placeholder="What do you search?">
@@ -9,12 +8,17 @@
 
 <!-- Results -->
 <div class="card-columns">
-	<div *ngIf="results"><!-- there are results -->
-		<div *ngFor="let page of objectKeys(results); let i = index" class="card">
-			<app-card [data]="results[page]"></app-card>
+	<div *ngIf="results">
+		<div *ngIf="results != 'error'; else noResults">
+			<!-- there are results -->
+			<div *ngFor="let page of objectKeys(results); let i = index" class="card">
+				<app-card [data]="results[page]"></app-card>
+			</div>
 		</div>
 	</div>
 </div>
 
-
-<!-- {{ results | json }} -->
+<!-- there are no results -->
+<ng-template #noResults>
+	No search results
+</ng-template>

@@ -20,8 +20,13 @@ export class SearchComponent implements OnInit {
       this.wikirestService.getSearchResults(value).subscribe(
         data => {
           console.log(data);
-          console.log(data.query.pages);
-          this.results = data.query.pages;
+          if (data.query) {
+            this.results = data.query.pages;
+          } else {
+            this.results = 'error';
+          }
+
+          console.log(this.results);
           // for (var page in this.results) {
           //  console.log(this.results[page]);
           // }
