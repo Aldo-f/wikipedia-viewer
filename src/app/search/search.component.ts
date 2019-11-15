@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
           console.log(data.query.pages);
           this.results = data.query.pages;
           // for (var page in this.results) {
-          // console.log(this.results[page]);
+          //  console.log(this.results[page]);
           // }
         },
         err => {

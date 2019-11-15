@@ -2,8 +2,8 @@
 
 <form class="form">
 	<div class="input-group mb-3">
-		<input class="form-control col-sm-10" #box (blur)="doSearch('blur',box.value); box.value=''" placeholder="What do you search?">
-		<button class="col-sm-2 btn btn-primary" (click)="doSearch('click button',box.value)" >Search</button>
+		<input class="form-control col-sm-10" #box placeholder="What do you search?">
+		<button class="col-sm-2 btn btn-primary" (click)="doSearch('click button',box.value); box.value=''" >Search</button>
 	</div>
 </form>
 
