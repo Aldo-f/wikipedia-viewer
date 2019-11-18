@@ -1,12 +1,14 @@
-<a *ngIf="data.thumbnail"  href="{{data.thumbnail.source}}">
-	<img src="{{data.thumbnail.source}}" class="card-img-top" alt="image of {{data.title}}">
-</a>
-
-<div class="card-body">
-  <h5 class="card-title">{{ data.title }}</h5>
-  <p class="card-text">{{ data.extract }}</p>
-
+<div *ngIf="data.thumbnail">
+	<img src="{{data.thumbnail.source}}" class="card-img-top clickable" alt="image of {{data.title}}"  (click)="open(i)">
 </div>
-<div class="card-footer text-muted">
-  <a href="{{data.fullurl}}" target="_blank" class="card-link">Read more</a>
-</div>
+
+	<div class="card-body">
+		<h5 class="card-title">{{ data.title }}</h5>
+		<p class="card-text">{{ data.extract }}</p>
+
+	</div>
+	<div class="card-footer text-muted">
+		<a href="{{data.fullurl}}" target="_blank" class="card-link">Read more</a>
+	</div>
+
+	<!-- <button toggle>Toggle fullscreen<button> -->

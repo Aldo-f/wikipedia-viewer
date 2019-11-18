@@ -12,7 +12,7 @@
 		<div *ngIf="results != 'error'; else noResults">
 			<!-- there are results -->
 			<div *ngFor="let page of objectKeys(results); let i = index" class="card">
-				<app-card [data]="results[page]"></app-card>
+				<app-card [data]="results[page]" [i]="i"></app-card>
 			</div>
 		</div>
 	</div>
